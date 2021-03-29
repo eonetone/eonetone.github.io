@@ -306,7 +306,7 @@ h4 {
               <div id="bigBod">
                 <div class="mainBod">
                   <div class="left-side">
-                    <h4 class ="titles" id = "username">Username</h5>
+                    <h5 class ="titles" id = "username">Username</h5>
                     <label style="margin-top: 4vmin" id="total">Total Hours: </label><br><label class="numberOfHours"> </label>
                     <label id = "students"># of Students Helped: </label>
                   </div>
@@ -361,6 +361,7 @@ h4 {
   }
   document.getElementById('total').innerHTML = "Total Hours: "+hours
   document.getElementById('students').innerHTML = "# of Students Helped: "+peoplehelped
+/*
   if(reviews.length==0){
     document.getElementById('rating').innerHTML = "Rating: No Reviews Yet!"
 
@@ -370,6 +371,7 @@ h4 {
 
   }
   document.getElementById('rating').setAttribute('onclick','allreviews()')
+  */
   document.getElementById('username').innerHTML = sessionStorage.getItem("usernamea")
 
   //console.log(allrev)
