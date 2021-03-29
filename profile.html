@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Profile</title>
+
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
+    <link rel="stylesheet" href="assets/fonts/simple-line-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
+    <link rel="stylesheet" href="assets/css/smoothproducts.css">
+    <style>
+            ul,
+li {
+  margin: 0px;
+  list-style-type: none;
+}
+
+.js-pscroll {
+  position: relative;
+  overflow: hidden;
+}
+
+.table100 {
+  background-color: #78DBE7;
+
+}
+
+table {
+  width: 100%;
+}
+
+th,
+td {
+  font-weight: unset;
+  padding-right: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-align: center
+}
+
+tr {
+  transition: all 0.5s ease-out;
+}
+
+
+
+.column1 {
+  max-width: 33%;
+  padding-left: 15px;
+  color: black;
+}
+
+.column2 {
+  max-width: 33%;
+  padding-right: 15px;
+  font-weight: bold;
+  color: black;
+}
+
+.table100-head th {
+  padding-top: 18px;
+  padding-bottom: 18px;
+  padding-left: 20px;
+}
+
+.table100-body td {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.table100 {
+  position: relative;
+  padding-top: 60px;
+}
+
+.table100-head {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.table100-body {
+  max-height: 585px;
+  overflow: auto;
+  text-align: center
+}
+/*table header*/
+.table100.ver1 th {
+  font-family: Montserrat;
+  font-size: 1.4rem;
+  /* color: #fff; */
+  line-height: 1.4;
+
+  background-color: #78A2DE;
+}
+
+.table100.ver1 td {
+  font-family: Montserrat;
+  font-size: 1.2rem;
+  /* color: #808080; */
+  line-height: 1.4;
+}
+.schedule {
+  margin-right: 20rem;
+  margin-left: 20rem;
+}
+.table100.ver1 .table100-body tr:nth-child(even) {
+  background-color: #E1E9EA;
+  color: gainsboro;
+}
+
+.table100.ver1 .table100-body tr:nth-child(odd) {
+  background-color: #D3DBDC;
+  color: gainsboro;
+}
+
+.table100.ver1 {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
+  -o-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
+  -ms-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
+}
+#day {
+  width: 10rem;
+}
+#daynav {
+  color: white;
+  display: inline-flex;
+
+}
+@media (max-width: 1500px) {
+  .schedule {
+    margin: 0vh 10vw !important;
+  }
+
+}
+@media (max-width: 992px) {
+  .schedule {
+    float: none;
+  }
+  #schedule-section {
+    height: auto !important;
+    padding-bottom: 60px !important;
+  }
+  table {
+    min-width: 300px !important;
+  }
+
+}
+@media (max-width: 700px) {
+  .cell100, th {
+    font-size: 0.8rem !important;
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+  }
+  .table100 {
+    padding-top: 30px !important;
+  }
+
+}
+
+.mainBod{
+  color: #616161;
+  content: "";
+  display: table;
+  clear: both;
+  margin: auto;
+  width: 100%;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: auto auto;
+  border-radius: 5px;
+  column-gap: 1rem;
+  font-size: 2.5vmin;
+  color: gainsboro;
+}
+#bigBod{
+  margin-top: 8vh;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  padding: 10px;
+  border-radius: 5px;
+}
+.left-side{
+  color: #616161;
+  border-radius: 5px;
+  padding: 3px;
+  width: 100%;
+  height: 50vmin;
+}
+.right-side{
+  color: #616161;
+  border-radius: 5px;
+  padding: 3px;
+  overflow: auto;
+  width: 100%;
+  height: 50vmin;
+}
+.titles{
+  font-size: 4vmin;
+  color: #616161;
+}
+.totalHours{
+  padding-right: 5px;
+}
+ul{
+  list-style: none;
+}
+#badge-list{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  
+}
+#badge-item{
+    display: inline;
+    padding: 10px;
+}
+#invader{
+  display: inline;
+  padding: 10px;
+  opacity: .1;
+}
+#star{
+  display: inline;
+  padding: 10px;
+  opacity: .1;
+}
+#nerd{
+  display: inline;
+  padding: 10px;
+  opacity: .1;
+}
+#clap{
+  display: inline;
+  padding: 10px;
+  opacity: .1;
+}
+#glove{
+  display: inline;
+  padding: 10px;
+  opacity: .1;
+}
+#trophy{
+  display: inline;
+  padding: 10px;
+  opacity: .1;
+}
+#badges{
+  font-size: 3vmin;
+}
+.list-group {
+  color: white;
+  height: 30vmin;
+}
+.list-group-item {
+  background: rgba(55,53, 77,0);
+  border-color:rgba(140,140,140,.75);
+}
+b {
+  font-size: 7vmin;
+}
+label {
+  font-size: 3vmin;
+  font-weight: 300;
+}
+h4 {
+  margin-top: 2vmin;
+}
+
+
+</style>
+</head>
+
+<body class="text-primary" style="font-family: 'Poppins', sans-serif;">
+		<nav class="navbar navbar-light navbar-expand-lg py-1 fixed-top bg-white clean-navbar" style="box-shadow: 0px 5px 8px #696969; min-height: 80px;">
+		<script>
+
+		</script>
+		<div class="container"><a class="navbar-brand logo" href="#"><img src="https://docs.google.com/drawings/d/e/2PACX-1vTYtt6WBfBPmIjX18dS1sF57MMHB9hvQU7NglP_Zi-Oz2Ws1LsjmKOw14C2H3i3E1KUbQXQv6dE7dKV/pub?w=896&h=707" style="width: 15vmin;">E1T1</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse"
+                id="navcol-1">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item js-scroll-trigger"><a class="nav-link active js-scroll-trigger" style="font-size:15px" href="/log.html">Log Hours</a></li>
+                    <li class="nav-item js-scroll-trigger"><a class="nav-link active js-scroll-trigger" style="font-size:15px" href="#home">Sign Out</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    
+    <main class="page">
+        <section class="clean-block about-us" style="background-color:#fff">
+            <div class="container">
+
+              <div id="bigBod">
+                <div class="mainBod">
+                  <div class="left-side">
+                    <h4 class ="titles" id = "username">Username</h5>
+                    <label style="margin-top: 4vmin" id="total">Total Hours: </label><label class="numberOfHours"> </label>
+                    <label id = "students"># of Students Helped: </label>
+                  </div>
+                  <div class="right-side">
+                    <label class ="titles">Logs:</label>
+                    <!--logs go here-->
+                    <ul class="list-group" id="logs" style="color: #616161"></ul>
+                  </div>
+                </div>
+                <div id="badges">
+                  <label style="color:#616161">Badges:</label>
+                  <ul id="badge-list">
+                        <li id="badge-item"><b onclick = "badgeOne()"id="trophy">🏆</b></li>
+                        <li id="badge-item"><b onclick = "badgeTwo()" id="glove">🥊</b></li>
+                        <li id="badge-item"><b onclick = "badgeThree" id="clap">👏</b></li>
+                        <li id="badge-item"><b onclick = "badgeFour()" id="nerd">🤓</b></li>
+                        <li id="badge-item"><b onclick = "badgeFive()" id="star">🌟</b></li>
+                        <li id="badge-item"><b onclick = "badgeSix()" id="invader">👾</b></li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+        </section>
+    </main>
+
+
+<script>
+  var loggedin = sessionStorage.getItem("usernamea")
+  if(loggedin == null){
+        alert("Hey! Log in first.")
+        window.location = "login.html"
+
+  }
+  var list = JSON.parse(sessionStorage.getItem("logs"))
+  var reviews = list.pop()
+
+
+  var hours = 0;
+  var peoplehelped = list.length;
+  var totalstars = 0;
+  var allrev = ''
+  for(i=0;i<list.length;i++) {
+    addLog(list[i].student , list[i].subject , list[i].hours , list[i].desc);
+    hours += parseFloat(list[i].hours)
+  }
+
+  for(r=0;r<reviews.length;r++){
+    totalstars += parseFloat(reviews[r].stars)
+
+    allrev += reviews[r].stars+" Stars: "+reviews[r].review+"\n"
+  }
+  document.getElementById('total').innerHTML = "Total Hours: "+hours
+  document.getElementById('students').innerHTML = "# of Students Helped: "+peoplehelped
+  if(reviews.length==0){
+    document.getElementById('rating').innerHTML = "Rating: No Reviews Yet!"
+
+  }
+  else{
+    document.getElementById('rating').innerHTML = "Rating: "+(totalstars/reviews.length)+"\u2B50"
+
+  }
+  document.getElementById('rating').setAttribute('onclick','allreviews()')
+  document.getElementById('username').innerHTML = sessionStorage.getItem("usernamea")
+
+  //console.log(allrev)
+  function addLog(name, sub, hours, desc) {
+    var ul = document.getElementById("logs");
+    var li = document.createElement("li");
+    var innerTxt = document.createElement("p");
+    var lowerTxt = document.createElement("p");
+    var descTxt = document.createElement("p");
+
+    innerTxt.style['font-weight'] = 600;
+
+    innerTxt.innerHTML = "Helped " + name + " with " + sub;
+    lowerTxt.innerHTML = hours + " hour(s)";
+    descTxt.innerHTML = desc;
+    li.setAttribute('class','list-group-item');
+
+    li.appendChild(innerTxt);
+    li.appendChild(lowerTxt);
+    li.appendChild(descTxt);
+    ul.appendChild(li);
+  }
+
+  function allreviews(){
+    alert(allrev)
+  }
+
+  function badgeOne(){
+    alert("You need 10 hours of tutoring to unlock this badge");
+  }
+  function badgeTwo(){
+    alert("You need 25 hours of tutoring to unlock this badge");
+  }
+  function badgeThree(){
+    alert("You need 50 hours of tutoring to unlock this badge");
+  }
+  function badgeFour(){
+    alert("You need 100 hours of tutoring to unlock this badge");
+  }
+  function badgeFive(){
+    alert("You need to tutor 10 people to receive this badge");
+  }
+  function badgeSix(){
+    alert("You need to get a 5 star rating to receive this badge");
+  }
+
+  if(hours>=10){
+    revealBadgeOne()
+  }
+  if(hours>=25){
+    revealBadgeTwo()
+  }
+  if(hours>=50){
+    revealBadgeThree()
+  }
+  if(hours>=100){
+    revealBadgeFour()
+  }
+  if((totalstars/reviews.length)){
+    revealBadgeSix()
+  }
+  if(peoplehelped>10){
+    revealBadgeFive()
+  }
+  function revealBadgeOne(){
+    document.getElementById("trophy").style.opacity = '1'
+  }
+  function revealBadgeTwo(){
+    document.getElementById("glove").style.opacity='1'
+  }
+  function revealBadgeThree(){
+    document.getElementById("clap").style.opacity='1'
+  }
+  function revealBadgeFour(){
+    document.getElementById("nerd").style.opacity='1'
+  }
+  function revealBadgeFive(){
+    document.getElementById("invader").style.opacity='1'
+  }
+  function revealBadgeSix(){
+    document.getElementById("star").style.opacity='1'
+  }
+
+</script>
+
+
+    <footer class="page-footer light" style="border-color: rgb(0,0,0);border-top:solid 1px silver;color:#fff;background-color:#2c50b3" id="foot">
+        <div class="container align-items-center">
+            <div class="row">
+                <div class="col-sm"><img src="https://docs.google.com/drawings/d/e/2PACX-1vTrHVQ3c0m3E0TtXymdhdBup1x6x_kcYNNAe5Z0uOxhJcaqVS8ALsdBJztF2Ac31qJkzC8da43SUM_z/pub?w=960&h=720" style="margin: 1px;height: 150px;padding: 3px;"></div>
+                <div class="col-sm">
+                    <h5>About</h5>
+                    <ul>
+                        <li><a href="#about-us" style="color:#fff;">FAQ</a></li>
+                        <li><a href="mailto:eachoneteachonetutoring@gmail.com" style="color:#fff;">Contact Us</a></li>
+                        <li><a onclick="window.open('https://docs.google.com/document/d/1oFcEOn3pcwJI4GfS5kpknXZ6wwRD3pfqfP48znY8gho/edit')">Resource Doc</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm">
+                    <h5>Social</h5>
+                    <ul>
+                        <li><a href="https://www.instagram.com/eachone_teachonevh/" style="color:#fff;">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright" style="background-color: #212954;border-style:none">
+            <p style="color:gainsboro">Each One Teach One</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+    <script src="assets/js/smoothproducts.min.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    
+</body>
+
+</html>

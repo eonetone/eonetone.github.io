@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+	<title>EachOneTeachOne</title>
+
+	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
+	<link rel="stylesheet" href="assets/fonts/simple-line-icons.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
+	<link rel="stylesheet" href="assets/css/smoothproducts.css">
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+</style>
+	<style>
+		ul,
+		li {
+			margin: 0px;
+			list-style-type: none;
+		}
+
+		.js-pscroll {
+			position: relative;
+			overflow: hidden;
+		}
+
+		.table100 {
+			background-color: #78DBE7;
+
+		}
+
+		table {
+			width: 100%;
+		}
+
+		th,
+		td {
+			font-weight: unset;
+			padding-right: 10px;
+			overflow: hidden;
+			white-space: nowrap;
+			text-align: center
+		}
+
+		tr {
+			transition: all 0.5s ease-out;
+		}
+
+		.grid {
+			display: grid
+		}
+
+		.column1 {
+			max-width: 33%;
+			padding-left: 15px;
+			color: black;
+		}
+
+		.column2 {
+			max-width: 33%;
+			padding-right: 15px;
+			font-weight: bold;
+			color: black;
+		}
+
+		.table100-head th {
+			padding-top: 18px;
+			padding-bottom: 18px;
+			padding-left: 20px;
+		}
+
+		.table100-body td {
+			padding-top: 16px;
+			padding-bottom: 16px;
+		}
+
+		.table100 {
+			position: relative;
+			padding-top: 60px;
+		}
+
+		.table100-head {
+			position: absolute;
+			width: 100%;
+			top: 0;
+			left: 0;
+		}
+
+		.table100-body {
+			max-height: 585px;
+			overflow: auto;
+			text-align: center
+		}
+
+		/*table header*/
+		.table100.ver1 th {
+			font-family: Montserrat;
+			font-size: 1.4rem;
+			/* color: #fff; */
+			line-height: 1.4;
+
+			background-color: #4747a1;
+		}
+
+		.table100.ver1 td {
+			font-family: Montserrat;
+			font-size: 1.2rem;
+			/* color: #808080; */
+			line-height: 1.4;
+		}
+
+		.schedule {
+			margin-right: 20rem;
+			margin-left: 20rem;
+		}
+
+		.table100.ver1 .table100-body tr:nth-child(even) {
+			background-color: #E1E9EA;
+			color: gainsboro;
+		}
+
+		.table100.ver1 .table100-body tr:nth-child(odd) {
+			background-color: #D3DBDC;
+			color: gainsboro;
+		}
+
+		.table100.ver1 {
+			border-radius: 10px;
+			overflow: hidden;
+			box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
+			-moz-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
+			-webkit-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
+			-o-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
+			-ms-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
+		}
+
+		#day {
+			width: 10rem;
+		}
+
+		#daynav {
+			color: white;
+			display: inline-flex;
+
+		}
+
+		@media (max-width: 1500px) {
+			.schedule {
+				margin: 0vh 10vw !important;
+			}
+
+		}
+
+		@media (max-width: 992px) {
+			.schedule {
+				float: none;
+			}
+			#schedule-section {
+				height: auto !important;
+				padding-bottom: 60px !important;
+			}
+			table {
+				min-width: 300px !important;
+			}
+
+		}
+
+		@media (max-width: 700px) {
+			.cell100,
+			th {
+				font-size: 0.8rem !important;
+				padding-top: 8px !important;
+				padding-bottom: 8px !important;
+			}
+			.table100 {
+				padding-top: 30px !important;
+			}
+
+		}
+
+		.gap-5 {
+			gap: 1.25rem
+		}
+
+		.gap-y-5 {
+			row-gap: 1.25rem
+		}
+
+		.grid-flow-row {
+			grid-auto-flow: row
+		}
+
+		.grid-cols-1 {
+			grid-template-columns: repeat(1, minmax(0, 1fr))
+		}
+
+		.grid-rows-3 {
+			grid-template-rows: repeat(3, minmax(0, 1fr))
+		}
+
+		@media (min-width:768px) {
+			.md\:gap-x-10 {
+				-moz-column-gap: 2.5rem;
+				column-gap: 2.5rem
+			}
+			.md\:grid-cols-2 {
+				grid-template-columns: repeat(2, minmax(0, 1fr))
+			}
+			.md\:grid-cols-3 {
+				grid-template-columns: repeat(3, minmax(0, 1fr))
+			}
+			.md\:col-start-1 {
+				grid-column-start: 1
+			}
+			.md\:col-start-2 {
+				grid-column-start: 2
+			}
+			.md\:grid-rows-1 {
+				grid-template-rows: repeat(1, minmax(0, 1fr))
+			}
+			.md\:row-start-2 {
+				grid-row-start: 2
+			}
+			.md\:row-start-3 {
+				grid-row-start: 3
+			}
+			.md\:row-start-4 {
+				grid-row-start: 4
+			}
+			.md\:row-start-5 {
+				grid-row-start: 5
+			}
+			.md\:row-start-6 {
+				grid-row-start: 6
+			}
+			.md\:row-start-7 {
+				grid-row-start: 7
+			}
+		}
+
+		.border-2 {
+			border-width: 2px !important;
+      border-style: solid !important;
+      border-color: black !important;
+		}
+.font-sans{
+    font-family:Renner
+    color: black !important;
+}
+		.font-serif {
+			font-family: Crimson Pro
+      color: black !important;
+		}
+
+		.mb-5 {
+			margin-bottom: 1.25rem
+		}
+    .p-5{
+    padding:1.25rem
+}
+.text-xl{
+    font-size:1.25rem
+}
+.text-2xl{
+    font-size:1.5rem;
+    line-height:2rem
+}
+#box{
+  border-width: 2px !important;
+      border-style: solid !important;
+      border-color: black !important;
+}
+#boxtext{
+  color: black
+}
+	</style>
+</head>
+
+<body class="text-primary" style="font-family: 'Poppins', sans-serif;">
+		<nav class="navbar navbar-light navbar-expand-lg py-1 fixed-top bg-white clean-navbar" style="box-shadow: 0px 5px 8px #696969; min-height: 80px;">
+		<script>
+
+		</script>
+		<div class="container"><a class="navbar-brand logo" href="#"><img src="https://docs.google.com/drawings/d/e/2PACX-1vTYtt6WBfBPmIjX18dS1sF57MMHB9hvQU7NglP_Zi-Oz2Ws1LsjmKOw14C2H3i3E1KUbQXQv6dE7dKV/pub?w=896&h=707" style="width: 15vmin;">E1T1</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse"
+                id="navcol-1">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item js-scroll-trigger"><a class="nav-link active js-scroll-trigger" style="font-size:15px" href="#home">Home</a></li>
+                    <li class="nav-item js-scroll-trigger"><a class="nav-link active js-scroll-trigger" style="font-size:15px" href="/login.html">Login</a></li>
+                    <li class="nav-item js-scroll-trigger"><a class="nav-link active js-scroll-trigger" style="font-size:15px" href="#about">About E1T1</a></li>
+                    <li class="nav-item js-scroll-trigger"><a class="nav-link active js-scroll-trigger" style="font-size:15px" href="#subjects">Subjects</a></li>
+                    <li class="nav-item js-scroll-trigger"><a class="nav-link active js-scroll-trigger" style="font-size:15px" href="#about-us">FAQs</a></li>
+                    <li class="nav-item js-scroll-trigger"><a class="nav-link active js-scroll-trigger" style="font-size:15px" href="#foot">Extra</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main class="page landing-page">
+        <section id="home" class="clean-block clean-hero d-flex align-items-start flex-column">
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.rings.min.js"></script>
+                 <div id="vantaBirds"></div>
+
+
+            <div class="text">
+              <div class="d-flex align-items-start flex-column" style="margin-left:5vw">
+                <div><h1 style="font-size: 7vmin">Each One Teach One</h1></div>
+                <div><p>Every child matters</p></div>
+        
+
+                <script>
+                VANTA.RINGS({
+                  el: "#vantaBirds",
+                  mouseControls: true,
+                  touchControls: true,
+                  gyroControls: false,
+                  minHeight: 200.00,
+                  minWidth: 200.00,
+                  scale: 1.00,
+                  scaleMobile: 1.00,
+                  backgroundColor: 0x2c50b3,
+                  color: 0x31c031
+                })
+                </script>
+
+        </section>
+
+        <section id="about" class="clean-block clean-info light" style = "background-color:#073763ff3">
+            <div class="container">
+                <div class="block-heading col-md-6">
+                    
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <div style="margin-top: 5%; font-size: 20px; color:#616161" class="getting-started-info">
+                          <h2 class="text-info" style="color:#616161;">About Each One Teach One</h2>
+                    <p style="color:#616161">A free one-on-one tutoring program where Vernon Hills High schooler volunteer to tutor students K-8</p>
+                </div>
+                </div>
+                <div class="col-md-6"><img style="width:50vmin;padding-left:10px" class="img-thumbnail" src="https://docs.google.com/drawings/d/e/2PACX-1vT8iWZNZl3XtcNR1r3bNbsE8LQnjYKI__eHqmOwQJ9FuLGnuA-jNQdDcd6trRAXiaOEKNIpMlq5Q5HN/pub?w=793&h=691"></div>
+        </section>
+      
+        <section id="subjects" style="padding: 5vh 0vh 5vh 0vh; background: #2c50b3">
+         <div class="schedule-container row align-items-center" style="text-align: center;color:#fff">
+           <div class="col-md-6 block-heading" style="margin: auto auto">
+             <img style="width:50vmin;" class="img-thumbnail" src="https://docs.google.com/drawings/d/e/2PACX-1vSaevU0br1zTc3Yjh8zCBhNIqOttOhYp3_9fsNA_XVbJ8RZAGICiEAFXD7K3UvY_lTXvyhovxTldHqV/pub?w=624&h=623">
+           </div>
+
+           <div class="col-md-6">
+            <div class="block-heading">
+              <h1>Subjects Offered</h1>
+              <hr style="width:15em; border-color:#fff;">
+            </div>
+
+            <div style="font-size: 3.5vmin;">
+              <li>Math</li>
+              <li>English/Writing</li>
+              <li>Spanish</li>
+              <li>Computer Science</li>
+            </div>
+           </div>
+
+          </div>
+          
+      </section>
+
+
+      <section id="about-us" class="clean-block about-us light" style = "color:#616161">
+            <div class="container">
+                <div class="block-heading">
+                    <h2 class="text-info" style="color:">FAQs</h2>
+                   <div id="accordion"  class = "grid grid-cols-1 md:grid-cols-2 grid-flow-row gap-5">
+                      <div class="card" style="background: none; border-style: solid; border-width: 2px; width: 80%; margin: auto auto; border-radius:25px">
+                        <div class="card-header" id="headingOne" style="background: none; border-style: none;">
+                          <h5 class="mb-0">
+                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                              <h5 style="color:#616161">How do I, or my child, recieve tutoring?</h5>
+                            </button>
+                          </h5>
+                        </div>
+
+                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion" >
+                          <div class="card-body" style="color:#616161">
+                            All Vernon Hills based students K-8 are welcome to recieve tutoring! Fill out this <a href="https://docs.google.com/forms/d/1M2LJo6rei6X_mojUXf9roIlsi1ZZB0wNRkmU1EJLyIE/closedform">form.</a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card" style="background: none; border-style: solid; border-width: 2px; width: 80%; margin: auto auto;border-radius:25px">
+                        <div class="card-header" id="headingTwo" style="background: none; border-style: none">
+                          <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                              <h5 style="color:#616161">How do I become a tutor?</h5>
+                            </button>
+                          </h5>
+                        </div>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                          <div class="card-body" style="color:#616161">
+                            All Vernon Hills High School Students are welcom to tutor! Fill out this <a href="https://docs.google.com/forms/d/e/1FAIpQLSeWpsR3t7v6v2ckKxpsZvBUH_0Uv2fsw5eJDnCNQ1EKr91nzg/viewform?usp=sf_link">form</a> to sign up.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card" style="background: none; border-style: solid; border-width: 2px; width: 80%; margin: auto auto;border-radius:25px">
+                        <div class="card-header" id="headingThree" style="background: none; border-style: none">
+                          <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                              <h5 style="color:#616161">When do I sign up</h5>
+                            </button>
+                          </h5>
+                        </div>
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                          <div class="card-body" style="color:#616161">
+                            Each season we start a new session. Look for updates or check the google <a href="https://docs.google.com/forms/d/1M2LJo6rei6X_mojUXf9roIlsi1ZZB0wNRkmU1EJLyIE/closedform">form</a> to find out if the new session is about to <start class=""></start>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card" style="background: none; border-style: solid; border-width: 2px; width: 80%; margin: auto auto;border-radius:25px">
+                        <div class="card-header" id="headingFive" style="background: none; border-style: none">
+                          <h5 class="mb-0">
+                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                              <h5 style="color:#616161">How much does it cost?</h5>
+                            </button>
+                          </h5>
+                        </div>
+
+                        <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion" >
+                          <div class="card-body" style="color:#616161">
+                            Free! All of our tutors are volunteers who commit their time to their students.
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="card" style="background: none; border-style: solid; border-width: 2px; width: 80%; margin: auto auto;border-radius:25px">
+                        <div class="card-header" id="headingFive" style="background: none; border-style: none">
+                          <h5 class="mb-0">
+                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+                              <h5 style="color:#616161">How many students are in each class?</h5>
+                            </button>
+                          </h5>
+                        </div>
+
+                        <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion" >
+                          <div class="card-body" style="color:#616161">
+                            In E1T1 we focus on improving the individual needs of a child. Each session is a one-on-one where all of the tutor's attention is on a single student.
+                          </div>
+                        </div>
+                      </div>
+                    
+
+                     <div class="card" style="background: none; border-style: solid; border-width: 2px; width: 80%; margin: auto auto;border-radius:25px">
+                        <div class="card-header" id="headingSix" style="background: none; border-style: none">
+                          <h5 class="mb-0">
+                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
+                              <h5 style="color:#616161">Does E1T1 count for NHS hours?</h5>
+                            </button>
+                          </h5>
+                        </div>
+
+                        <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordion" >
+                          <div class="card-body" style="color:#616161">
+                            Yes! NHS recognizes hours spent tutoring in E1T1 as vonluteer hours.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </section>
+
+    </main>
+    <footer class="page-footer light" style="border-color: rgb(0,0,0);border-top:solid 1px silver;color:#fff;background-color:#2c50b3" id="foot">
+        <div class="container align-items-center">
+            <div class="row">
+                <div class="col-sm"><img src="https://docs.google.com/drawings/d/e/2PACX-1vTrHVQ3c0m3E0TtXymdhdBup1x6x_kcYNNAe5Z0uOxhJcaqVS8ALsdBJztF2Ac31qJkzC8da43SUM_z/pub?w=960&h=720" style="margin: 1px;height: 150px;padding: 3px;"></div>
+                <div class="col-sm">
+                    <h5>About</h5>
+                    <ul>
+                        <li><a href="#about-us" style="color:#fff;">FAQ</a></li>
+                        <li><a href="mailto:eachoneteachonetutoring@gmail.com" style="color:#fff;">Contact Us</a></li>
+                        <li><a onclick="window.open('https://docs.google.com/document/d/1oFcEOn3pcwJI4GfS5kpknXZ6wwRD3pfqfP48znY8gho/edit')">Resource Doc</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm">
+                    <h5>Social</h5>
+                    <ul>
+                        <li><a href="https://www.instagram.com/eachone_teachonevh/" style="color:#fff;">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright" style="background-color: #212954;border-style:none">
+            <p style="color:gainsboro">Each One Teach One</p>
+        </div>
+    </footer>
+    <script>
+      
+
+      var ok = false;
+
+      
+
+
+
+      function logIn(){
+        var uname = document.getElementById("username").value;
+        var pword = document.getElementById("password").value;
+        const Http = new XMLHttpRequest();
+        const url='https://script.google.com/macros/s/AKfycbyangjyCJS38YHrWC0PLBUfQKfz08sA_Q98kZRgVgHSHAf8H1XAQWiMJd6J-N_2_A9akA/exec';
+        var data = "?username="+uname+"&password="+pword+"&action=login";
+        Http.open("GET", String(url+data));
+        Http.send();
+
+        Http.onreadystatechange = (e) => {
+            ok = Http.responseText;
+            console.log(String(ok));
+            console.log(Http.readyState);
+        if (Http.readyState == 4)
+        {
+          if(ok.substring(0,8) == "student,"){
+              var stuff = JSON.parse(ok.substring(8,ok.length))
+              sessionStorage.setItem("alltutors",stuff[0])
+              sessionStorage.setItem("specifictutors",stuff[1])
+              console.log(sessionStorage.getItem("alltutors"))
+              sessionStorage.setItem("role","student")
+              sessionStorage.setItem("usernamea",uname);
+              alert("Success!");
+ 
+               window.location = "learn.html";
+            }
+            else if(ok.substring(0,6) == "tutor,"){
+              var stuff = JSON.parse(ok.substring(6,ok.length))
+              sessionStorage.setItem("students",stuff[0])
+              sessionStorage.setItem("logs",stuff[1])
+              sessionStorage.setItem("role","tutor")
+              sessionStorage.setItem("usernamea",uname);
+              alert("Success!");
+              window.location = "students.html"
+            }
+            else{
+              alert("Failed Login. Please retry or create an account")
+            }
+        }
+        }
+        
+
+      }
+
+      function nav(){
+        window.location = "signup.html"
+      }
+
+ 
+
+
+
+
+    </script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+    <script src="assets/js/smoothproducts.min.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    
+</body>
+
+</html>
