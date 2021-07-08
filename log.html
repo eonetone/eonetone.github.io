@@ -352,6 +352,10 @@
         var subject = document.getElementById("subjectInput").value;
         var hours = document.getElementById("hoursInput").value;
         var description = document.getElementById("descInput").value;
+	if(uname == "" || student == "" || subject == "" || hours == "" || description == ""){
+		alert("Please fill out all boxes.")
+		return
+	}
         const Http = new XMLHttpRequest();
         const url ='https://script.google.com/macros/s/AKfycbyangjyCJS38YHrWC0PLBUfQKfz08sA_Q98kZRgVgHSHAf8H1XAQWiMJd6J-N_2_A9akA/exec';
         var data = "?username="+uname+"&student="+student+"&subject="+subject+"&hours="+hours+"&description="+description+"&action=loghour";
